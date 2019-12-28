@@ -49,4 +49,4 @@ USER dockeruser
 EXPOSE 8532
 
 CMD bash
-CMD litecoind -conf=/opt/graphsense/sumcoin.conf -datadir=/opt/graphsense/data -daemon -rest && bash
+CMD sumcoind -conf=/opt/graphsense/sumcoin.conf -datadir=/opt/graphsense/data -daemon -rest && bash
