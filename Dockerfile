@@ -21,11 +21,11 @@ RUN apt-get update && \
         wget && \
     cd /tmp && \
     make install && \
-    strip /usr/local/bin/*litecoin*
+    strip /usr/local/bin/*sumcoin*
 
 FROM ubuntu:18.04
 
-COPY --from=builder /usr/local/bin/*litecoin* /usr/local/bin/
+COPY --from=builder /usr/local/bin/*sumcoin* /usr/local/bin/
 
 RUN useradd -r -u 10000 dockeruser && \
     mkdir -p /opt/graphsense/data && \
@@ -43,10 +43,10 @@ RUN useradd -r -u 10000 dockeruser && \
         libminiupnpc10 \
         libssl1.1
 
-ADD docker/litecoin.conf /opt/graphsense/litecoin.conf
+ADD docker/sumcoin.conf /opt/graphsense/sumcoin.conf
 
 USER dockeruser
 EXPOSE 8532
 
 CMD bash
-CMD litecoind -conf=/opt/graphsense/litecoin.conf -datadir=/opt/graphsense/data -daemon -rest && bash
+CMD litecoind -conf=/opt/graphsense/sumcoin.conf -datadir=/opt/graphsense/data -daemon -rest && bash

@@ -5,14 +5,14 @@ if ! [ -n "$1" ] ; then
     exit 1
 fi
 
-docker stop litecoin
-docker rm litecoin
+docker stop sumcoin
+docker rm sumcoin
 
 chown -R dockeruser "$1"
 
-docker run --restart=always -d --name litecoin \
+docker run --restart=always -d --name sumcoin \
     --cap-drop all \
     -p 8532:8532 \
     -v "$1":/opt/graphsense/data \
-    -it litecoin
+    -it sumcoin
 docker ps -a

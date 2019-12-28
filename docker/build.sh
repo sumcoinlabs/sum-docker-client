@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t litecoin .
+docker build -t sumcoin .

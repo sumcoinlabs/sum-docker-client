@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker exec -ti litecoin bash
+docker exec -ti sumcoin bash
