@@ -46,7 +46,7 @@ RUN useradd -r -u 10000 dockeruser && \
 ADD docker/sumcoin.conf /opt/graphsense/sumcoin.conf
 
 USER dockeruser
-EXPOSE 8532
+EXPOSE 3332
 
 CMD bash
 CMD sumcoind -conf=/opt/graphsense/sumcoin.conf -datadir=/opt/graphsense/data -daemon -rest && bash
