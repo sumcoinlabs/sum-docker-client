@@ -12,7 +12,7 @@ chown -R dockeruser "$1"
 
 docker run --restart=always -d --name sumcoin \
     --cap-drop all \
-    -p 8532:8532 \
+    -p 3332:3332 \
     -v "$1":/opt/graphsense/data \
     -it sumcoin
 docker ps -a
